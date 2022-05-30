@@ -7,6 +7,6 @@ let userSchema = new Schema({
     age: Number,
 }, {timestamps: true});
 
-let User = mongoose.model('user', userSchema);
+let User = mongoose.model('User', userSchema);
 
 module.exports = User;
