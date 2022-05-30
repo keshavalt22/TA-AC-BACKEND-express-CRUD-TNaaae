@@ -1,18 +1,18 @@
 let express = require('express');
-const User = require('../models/user');
 let router = express.Router();
+let User = require('../models/User');
 
 
 router.get("/new", (req, res) => {
-    res.render('users');
+    res.render('usersForm');
 })
 
 router.post("/", (req, res, next) => {
     console.log(req.body);
     //save to database
-    User.create(req.body, (err, createdUser) => {
-        if(err) return next(err);
-        res.redirect('/users/new');
+    User.create(req.body, (err, user) => {
+        if(err) return res.redirect('/users/new');
+        res.redirect('/');
     })
 
 
