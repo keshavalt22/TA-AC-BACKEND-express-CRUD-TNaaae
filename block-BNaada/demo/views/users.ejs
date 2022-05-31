@@ -13,11 +13,9 @@
         <div class="list">
             <% users.forEach(user => { %>
                 <h3><%= user.name %></h3>
-                <p><%= user.email %></p>
-                <p><%= user.age %></p>
-                <!-- <a href="#">
-                    <button class="btn-green">Show</button>
-                </a> -->
+                <a href="/users/<%= user._id %>">
+                    <button class="btn-green">Show user</button>
+                </a>
             <% }) %>
         </div>
     </div>
